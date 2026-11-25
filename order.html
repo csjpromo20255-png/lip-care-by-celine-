@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order | Lip Care by Celine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand">
+                <img src="logo.jpg" alt="Lip Care by Celine Logo" class="site-logo">
+                <div>
+                    <span class="brand-title">Lip Care by Celine</span>
+                    <span class="sub-logo">Céline Yassine • Lebanon</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="lip-kit.html">The Lip Kit</a></li>
+                    <li><a href="routine-guide.html">5-Step Routine</a></li>
+                    <li><a href="shade-finder.html">Shade Studio</a></li>
+                    <li><a href="ingredients.html">Ingredients</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="order.html" class="active">Order</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="theme-toggle" class="theme-btn">Dark Mode</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <span class="eyebrow">Local Orders • Lebanon</span>
+                <h1>Place an Order Inquiry</h1>
+                <p>Select your favorite product or The Complete Lip Kit and send your order details.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <form id="order-form" class="order-form">
+                    <div class="form-group">
+                        <label for="customer-name">Full Name</label>
+                        <input type="text" id="customer-name" name="customer-name" required placeholder="Your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Area / City in Lebanon</label>
+                        <input type="text" id="location" name="location" required placeholder="e.g., Zahlé, Beirut...">
+                    </div>
+                    <div class="form-group">
+                        <label for="item">Select Product</label>
+                        <select id="item" name="item">
+                            <option value="Hydrating Lip Mask ($5.00)">Hydrating Lip Mask ($5.00)</option>
+                            <option value="Strawberry Lip Sugar Scrub ($4.50)">Strawberry Lip Sugar Scrub ($4.50)</option>
+                            <option value="Berry Rose Lip Tint ($5.50)">Berry Rose Lip Tint ($5.50)</option>
+                            <option value="Creamy Lip Liner ($4.00)">Creamy Lip Liner ($4.00)</option>
+                            <option value="Crystal Clear Lip Gloss ($5.00)">Crystal Clear Lip Gloss ($5.00)</option>
+                            <option value="The Complete Lip Kit ($20.00)">The Complete Lip Kit ($20.00)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes (Optional)</label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Quantity or delivery notes..."></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Order Request</button>
+                    <p id="form-status" class="form-status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-brand">Lip Care by Celine • Céline Yassine</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="lip-kit.html">The Lip Kit</a>
+                <a href="about.html">Our Story</a>
+                <a href="order.html">Order</a>
+            </div>
+            <p class="copyright">© 2026 Lip Care by Celine. Locally made in Lebanon.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('celine-theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        btn.textContent = 'Light Mode';
+        }
+        btn.addEventListener('click', () => {
+        const dark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('celine-theme', dark ? 'dark' : 'light');
+        btn.textContent = dark ? 'Light Mode' : 'Dark Mode';
+        });
+
+        const orderForm = document.getElementById('order-form');
+        const statusEl = document.getElementById('form-status');
+        orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('customer-name').value.trim();
+        const item = document.getElementById('item').value;
+        statusEl.textContent = `Order request prepared for ${name}: ${item}.`;
+        orderForm.reset();
+        });
+    </script>
+</body>
+</html>

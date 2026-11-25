@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story | Lip Care by Celine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand">
+                <img src="logo.jpg" alt="Lip Care by Celine Logo" class="site-logo">
+                <div>
+                    <span class="brand-title">Lip Care by Celine</span>
+                    <span class="sub-logo">Céline Yassine • Lebanon</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="lip-kit.html">The Lip Kit</a></li>
+                    <li><a href="routine-guide.html">5-Step Routine</a></li>
+                    <li><a href="shade-finder.html">Shade Studio</a></li>
+                    <li><a href="ingredients.html">Ingredients</a></li>
+                    <li><a href="about.html" class="active">Our Story</a></li>
+                    <li><a href="order.html">Order</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="theme-toggle" class="theme-btn">Dark Mode</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <span class="eyebrow">Founder's Vision</span>
+                <h1>Why Lip Care by Celine?</h1>
+                <p>Born in Lebanon with a simple mission: make a complete, aesthetic lip care routine accessible to everyone.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container split-grid">
+                <img src="kit.jpg" alt="Lip Care by Celine Collection">
+                <div class="info-card">
+                    <h3>Locally Made, Student-Friendly Pricing</h3>
+                    <p>Created by Céline Yassine, Lip Care by Celine brings together lip scrubs, liners, tints, glosses, and masks at budget-friendly prices ($4.00 to $20.00) made locally in Lebanon.</p>
+                    <a href="products.html" class="btn-small">Browse Collection</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-brand">Lip Care by Celine • Céline Yassine</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="lip-kit.html">The Lip Kit</a>
+                <a href="routine-guide.html">5-Step Routine</a>
+                <a href="order.html">Order</a>
+            </div>
+            <p class="copyright">© 2026 Lip Care by Celine. Locally made in Lebanon.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('celine-theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        btn.textContent = 'Light Mode';
+        }
+        btn.addEventListener('click', () => {
+        const dark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('celine-theme', dark ? 'dark' : 'light');
+        btn.textContent = dark ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>

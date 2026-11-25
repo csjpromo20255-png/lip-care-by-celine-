@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shade Studio | Lip Care by Celine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="index.html" class="brand">
+                <img src="logo.jpg" alt="Lip Care by Celine Logo" class="site-logo">
+                <div>
+                    <span class="brand-title">Lip Care by Celine</span>
+                    <span class="sub-logo">Céline Yassine • Lebanon</span>
+                </div>
+            </a>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="lip-kit.html">The Lip Kit</a></li>
+                    <li><a href="routine-guide.html">5-Step Routine</a></li>
+                    <li><a href="shade-finder.html" class="active">Shade Studio</a></li>
+                    <li><a href="ingredients.html">Ingredients</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                    <li><a href="order.html">Order</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="theme-toggle" class="theme-btn">Dark Mode</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="container">
+                <span class="eyebrow">Tones & Finishes</span>
+                <h1>Shade Studio</h1>
+                <p>Compare finishes across our everyday tints, liners, and glosses.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container cards-grid">
+                <article class="info-card">
+                    <h3><span class="swatch-dot" style="background:#c2185b;"></span>Berry Rose Tint</h3>
+                    <p>Soft berry-rose stain ideal for daily classes, work, or natural makeup looks.</p>
+                </article>
+                <article class="info-card">
+                    <h3><span class="swatch-dot" style="background:#a16e5a;"></span>Warm Nude Liner</h3>
+                    <p>Balanced warm-nude pencil that shapes lips cleanly without harsh edges.</p>
+                </article>
+                <article class="info-card">
+                    <h3><span class="swatch-dot" style="background:#f8bbd0;"></span>Crystal Clear Gloss</h3>
+                    <p>Transparent high-shine finish that pairs with any lip shade or bare lips.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-brand">Lip Care by Celine • Céline Yassine</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="lip-kit.html">The Lip Kit</a>
+                <a href="about.html">Our Story</a>
+                <a href="order.html">Order</a>
+            </div>
+            <p class="copyright">© 2026 Lip Care by Celine. Locally made in Lebanon.</p>
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('celine-theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        btn.textContent = 'Light Mode';
+        }
+        btn.addEventListener('click', () => {
+        const dark = document.body.classList.toggle('dark-mode');
+        localStorage.setItem('celine-theme', dark ? 'dark' : 'light');
+        btn.textContent = dark ? 'Light Mode' : 'Dark Mode';
+        });
+    </script>
+</body>
+</html>
